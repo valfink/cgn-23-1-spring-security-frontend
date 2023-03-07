@@ -5,6 +5,8 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import axios from "axios";
 import Cookies from "js-cookie";
+import ProtectedContent from "./components/ProtectedContent";
+import MixedProtectedContent from "./components/MixedProtectedContent";
 
 axios.interceptors.request.use(config => {
     if (["put", "post", "delete"].includes(config.method || "")) {
@@ -24,10 +26,14 @@ function App() {
         <nav>
             <li><Link to={"/sign-up"}>Sign up</Link></li>
             <li><Link to={"/login"}>Login</Link></li>
+            <li><Link to={"/protected"}>Protected Content</Link></li>
+            <li><Link to={"/mixed"}>Mixed Content</Link></li>
         </nav><br/>
       <Routes>
         <Route path={"/sign-up"} element={<SignUp />} />
         <Route path={"/login"} element={<Login />} />
+        <Route path={"/protected"} element={<ProtectedContent />} />
+        <Route path={"/mixed"} element={<MixedProtectedContent />} />
       </Routes>
     </div>
   );
