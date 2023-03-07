@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import {Link, Route, Routes} from "react-router-dom";
-import SignUp from "./component/SignUp";
-import Login from "./component/Login";
+import SignUp from "./components/SignUp";
+import Login from "./components/Login";
 import axios from "axios";
 import Cookies from "js-cookie";
 
