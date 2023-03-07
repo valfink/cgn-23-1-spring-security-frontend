@@ -20,27 +20,23 @@ export default function SignUp() {
 
     function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-        return axios.get("/api/csrf")
+        return axios.post("/api/users", {username, password}, {
+            headers: {"X-XSRF-TOKEN": Cookies.get("XSRF-TOKEN")}
+        })
             .then(() => {
-                return axios.post("/api/users", {username, password}, {
-                    headers: { "X-XSRF-TOKEN": Cookies.get("XSRF-TOKEN")}
-                })
-                    .then(() => {
-                        navigate("/login");
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        setFormError(err.response.data.error);
-                    });
+                navigate("/login");
             })
-            .catch(console.error);
+            .catch(err => {
+                console.error(err);
+                setFormError(err.response.data.error);
+            });
     }
 
     return (
         <>
             <br/>
             <form className={"signup-form"} onSubmit={handleSubmit}>
-                {formError && <div className={"form-error"}>Error: {formError}</div> }
+                {formError && <div className={"form-error"}>Error: {formError}</div>}
                 <label>
                     Username:
                     <input type={"text"} value={username} onChange={handleUsernameChange}/>
