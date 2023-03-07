@@ -21,7 +21,7 @@ export default function useAuth(redirectToSignIn?: boolean) {
             .catch(e => {
                 if (e.response.status === 401 && redirectToSignIn){
                     window.sessionStorage.setItem("signInRedirect", pathname || "/");
-                    navigate("/sign-in");
+                    navigate("/login");
                 }
             })
     }, [pathname, navigate, redirectToSignIn]);
