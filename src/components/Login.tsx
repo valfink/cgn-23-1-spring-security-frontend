@@ -24,7 +24,9 @@ export default function Login() {
             }
         })
             .then(() => {
-                navigate("/");
+                const redirect = window.sessionStorage.getItem("signInRedirect") || "/";
+                window.sessionStorage.removeItem("signInRedirect");
+                navigate(redirect);
             })
             .catch(err => {
                 console.error(err);
