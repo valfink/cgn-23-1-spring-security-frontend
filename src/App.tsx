@@ -21,7 +21,10 @@ axios.interceptors.request.use(config => {
 function App() {
   return (
     <div className="App">
-        <Link to={"/sign-up"}>Sign up</Link><br/>
+        <nav>
+            <li><Link to={"/sign-up"}>Sign up</Link></li>
+            <li><Link to={"/login"}>Login</Link></li>
+        </nav><br/>
       <Routes>
         <Route path={"/sign-up"} element={<SignUp />} />
         <Route path={"/login"} element={<Login />} />

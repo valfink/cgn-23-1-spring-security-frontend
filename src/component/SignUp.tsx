@@ -36,6 +36,7 @@ export default function SignUp() {
         <>
             <br/>
             <form className={"signup-form"} onSubmit={handleSubmit}>
+                <h2>Sign Up</h2>
                 {formError && <div className={"form-error"}>Error: {formError}</div>}
                 <label>
                     Username:

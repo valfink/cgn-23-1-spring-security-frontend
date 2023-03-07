@@ -1,5 +1,6 @@
 .signup-form {
     padding: 2rem;
+    padding-top: 0;
     margin: 0 auto;
     width: 80%;
     border: 1px solid black;
