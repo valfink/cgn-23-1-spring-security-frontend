@@ -1,0 +1,12 @@
+.signup-form {
+    padding: 2rem;
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid black;
+}
+.signup-form label {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+}
