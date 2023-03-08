@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Link, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import axios from "axios";
@@ -23,13 +23,8 @@ axios.interceptors.request.use(config => {
 function App() {
   return (
     <div className="App">
-        <nav>
-            <li><Link to={"/sign-up"}>Sign up</Link></li>
-            <li><Link to={"/login"}>Login</Link></li>
-            <li><Link to={"/protected"}>Protected Content</Link></li>
-            <li><Link to={"/mixed"}>Mixed Content</Link></li>
-        </nav><br/>
       <Routes>
+        <Route path={"/"} element={<MixedProtectedContent />} />
         <Route path={"/sign-up"} element={<SignUp />} />
         <Route path={"/login"} element={<Login />} />
         <Route path={"/protected"} element={<ProtectedContent />} />

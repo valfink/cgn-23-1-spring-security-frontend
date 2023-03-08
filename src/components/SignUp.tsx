@@ -3,6 +3,7 @@ import "./SignUp.css";
 import axios from "axios";
 import Cookies from "js-cookie";
 import {useNavigate} from "react-router-dom";
+import Layout from "./Layout";
 
 export default function SignUp() {
     const [username, setUsername] = useState<string>("");
@@ -33,7 +34,7 @@ export default function SignUp() {
     }
 
     return (
-        <>
+        <Layout>
             <br/>
             <form className={"signup-form"} onSubmit={handleSubmit}>
                 <h2>Sign Up</h2>
@@ -48,6 +49,6 @@ export default function SignUp() {
                 </label>
                 <button type={"submit"}>Sign Me Up</button>
             </form>
-        </>
+        </Layout>
     )
 }

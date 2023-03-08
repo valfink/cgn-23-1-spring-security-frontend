@@ -1,6 +1,7 @@
 import {ChangeEvent, FormEvent, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import Layout from "./Layout";
 
 export default function Login() {
     const [username, setUsername] = useState<string>("");
@@ -35,7 +36,7 @@ export default function Login() {
     }
 
     return (
-        <>
+        <Layout>
             <br/>
             <form className={"signup-form"} onSubmit={handleSubmit}>
                 <h2>Log In</h2>
@@ -50,6 +51,6 @@ export default function Login() {
                 </label>
                 <button type={"submit"}>Log Me In</button>
             </form>
-        </>
+        </Layout>
     )
 }
